@@ -54,4 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['tambah'] = 'C_kurikulum/tambah';
+$route['edit/(:any)'] = 'C_kurikulum/edit/$1';
 $route['hapus/(:any)'] = 'C_kurikulum/hapus/$1';
