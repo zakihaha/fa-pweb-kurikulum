@@ -13,35 +13,46 @@
                 <a href="<?php echo base_url() ?>tambah" class="btn btn-success">Tambah</a>
             </div>
             <div class="main">
-                <?php if($this->session->flashdata()): 
+
+                <?php if ($this->session->flashdata()) :
                     $key = array_keys($this->session->flashdata())[0];
                     $value = $this->session->flashdata();
-                    ?>
-                    
-                    <div class="alert alert-<?php echo $key?> alert-dismissible">
+                ?>
+
+                    <div class="alert alert-<?php echo $key ?> alert-dismissible">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <?php print_r($value[$key]) ?>
                     </div>
                 <?php endif ?>
-                <div class="form-group mb-20px">
-                    <form action="#" method="post">
+
+                <form action="<?php echo base_url() ?>" method="post">
+                    <div class="form-group mb-20px">
                         <div class="d-flex align-items-center">
-                            <label class="form-label" for="semester">Tampilkan</label>
-                            <div class="form-semester">
+                            <label class="form-label me-10px" for="semester">Tampilkan</label>
+                            <div class="me-10px">
+
                                 <select name="semester" id="semester" class="form-control">
-                                    <option value="">Semua</option>
-                                    <option value="1">Semester 1</option>
-                                    <option value="2">Semester 2</option>
-                                    <option value="3">Semester 3</option>
-                                    <option value="4">Semester 4</option>
-                                    <option value="5">Semester 5</option>
-                                    <option value="6">Semester 6</option>
+                                    <option value="">Semua semester</option>
+                                    <?php foreach ($semester as $data) : ?>
+                                        <option value="<?php echo $data ?>">Semester <?php echo $data ?></option>
+                                    <?php endforeach ?>
                                 </select>
+
+                            </div>
+                            <div class="me-10px">
+
+                                <select name="tahun_ajaran" id="tahun_ajaran" class="form-control">
+                                    <option value="">Semua T.A.</option>
+                                    <?php foreach ($tahun_ajaran as $data) : ?>
+                                        <option value="<?php echo $data ?>">T.A. <?php echo $data ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                                
                             </div>
                             <input type="submit" name="submit" class="btn btn-primary"></input>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
 
                 <table class="table table-striped">
                     <thead>
@@ -50,6 +61,7 @@
                             <th>Kode Matakuliah</th>
                             <th>Nama Matakuliah</th>
                             <th>Sifat Perkuliahan</th>
+                            <th>Tahun Ajaran</th>
                             <th>Semester</th>
                             <th>Jenis Matakuliah</th>
                             <th>Bobot SKS</th>
@@ -57,15 +69,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php if (empty($kurikulum)) : ?>
+                            <tr>
+                                <td>
+                                    Data tidak ditemukan
+                                </td>
+                            </tr>
+                        <?php endif ?>
+
                         <?php
-                        $no = 1;
                         foreach ($kurikulum as $data) :
                         ?>
                             <tr>
-                                <td><?php echo $no ?></td>
+                                <td><?php echo ++$start ?></td>
                                 <td><?php echo $data['kode_matakuliah'] ?></td>
                                 <td><?php echo $data['nama_matakuliah'] ?></td>
                                 <td><?php echo $data['sifat_perkuliahan'] ?></td>
+                                <td><?php echo $data['tahun_ajaran'] ?></td>
                                 <td><?php echo $data['semester'] ?></td>
                                 <td><?php echo $data['jenis_matakuliah'] ?></td>
                                 <td><?php echo $data['bobot_sks'] ?></td>
@@ -79,11 +99,12 @@
                                 </td>
                             </tr>
                         <?php
-                            $no++;
                         endforeach
                         ?>
                     </tbody>
                 </table>
+
+                <?php echo $this->pagination->create_links() ?>
             </div>
         </div>
     </div>

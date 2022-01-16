@@ -34,6 +34,16 @@
                         <div class="small text-danger mt-5px"><?php echo form_error('sifat_perkuliahan') ?></div>
                     </div>
                     <div class="form-group">
+                        <label for="tahun_ajaran">Tahun Ajaran</label>
+                        <select id="tahun_ajaran" name="tahun_ajaran" class="form-control">
+                            <option selected value="">Pilih</option>
+                            <?php foreach ($tahun_ajaran as $data) : ?>
+                                <option value="<?php echo $data ?>"><?php echo $data ?></option>
+                            <?php endforeach ?>
+                        </select>
+                        <div class="small text-danger mt-5px"><?php echo form_error('tahun_ajaran') ?></div>
+                    </div>
+                    <div class="form-group">
                         <label for="semester">Semester</label>
                         <div class="d-flex">
                             <?php foreach($semester as $data) : ?>

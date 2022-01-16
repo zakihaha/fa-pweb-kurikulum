@@ -1,9 +1,27 @@
 <?php
 
 class M_kurikulum extends CI_Model {
-    public function ambilKurikulum()
+    public function ambilSemuaKurikulum()
     {
+        $this->db->order_by('semester', 'asc');
         return $this->db->get('tbl_kurikulum')->result_array();
+    }
+
+    public function ambilKurikulum($limit, $start, $semester = null, $tahun_ajaran = null)
+    {
+        if ($semester) {
+            $this->db->where('semester', $semester);
+        }
+        if ($tahun_ajaran) {
+            $this->db->where('tahun_ajaran', $tahun_ajaran);
+        }
+        
+        return $this->db->get('tbl_kurikulum', $limit, $start)->result_array();
+    }
+
+    public function hitungSemuaKurikulum()
+    {
+        return $this->db->get('tbl_kurikulum')->num_rows();
     }
 
     public function tambahKurikulum()
@@ -12,6 +30,7 @@ class M_kurikulum extends CI_Model {
             'kode_matakuliah' => $this->input->post('kode_matakuliah'),
             'nama_matakuliah' => $this->input->post('nama_matakuliah'),
             'sifat_perkuliahan' => $this->input->post('sifat_perkuliahan'),
+            'tahun_ajaran' => $this->input->post('tahun_ajaran'),
             'semester' => $this->input->post('semester'),
             'jenis_matakuliah' => $this->input->post('jenis_matakuliah'),
             'bobot_sks' => $this->input->post('bobot_sks'),
@@ -31,6 +50,7 @@ class M_kurikulum extends CI_Model {
             'kode_matakuliah' => $this->input->post('kode_matakuliah'),
             'nama_matakuliah' => $this->input->post('nama_matakuliah'),
             'sifat_perkuliahan' => $this->input->post('sifat_perkuliahan'),
+            'tahun_ajaran' => $this->input->post('tahun_ajaran'),
             'semester' => $this->input->post('semester'),
             'jenis_matakuliah' => $this->input->post('jenis_matakuliah'),
             'bobot_sks' => $this->input->post('bobot_sks'),

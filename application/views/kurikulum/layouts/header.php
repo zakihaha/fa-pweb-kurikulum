@@ -22,6 +22,10 @@
             margin-right: 20px;
         }
 
+        .me-10px {
+            margin-right: 10px;
+        }
+
         .me-5px {
             margin: 4px 5px 0 0 !important
         }
@@ -51,10 +55,6 @@
 
         .form-label {
             display: inline;
-        }
-
-        .form-semester {
-            margin: 0 10px;
         }
 
         /* Set black background color, white text and some padding */
