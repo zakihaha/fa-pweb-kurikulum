@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2021 at 04:53 PM
+-- Generation Time: Jan 16, 2022 at 04:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -31,7 +31,8 @@ CREATE TABLE `tbl_kurikulum` (
   `id` int(11) NOT NULL,
   `kode_matakuliah` varchar(5) NOT NULL,
   `nama_matakuliah` varchar(50) NOT NULL,
-  `jenis_perkuliahan` varchar(20) NOT NULL,
+  `sifat_perkuliahan` varchar(20) NOT NULL,
+  `tahun_ajaran` varchar(10) NOT NULL,
   `semester` int(1) NOT NULL,
   `jenis_matakuliah` varchar(20) NOT NULL,
   `bobot_sks` int(2) NOT NULL
@@ -41,8 +42,14 @@ CREATE TABLE `tbl_kurikulum` (
 -- Dumping data for table `tbl_kurikulum`
 --
 
-INSERT INTO `tbl_kurikulum` (`id`, `kode_matakuliah`, `nama_matakuliah`, `jenis_perkuliahan`, `semester`, `jenis_matakuliah`, `bobot_sks`) VALUES
-(1, 'DT001', 'Pendidikan Pancasila', 'Teori', 1, 'Wajib', 2);
+INSERT INTO `tbl_kurikulum` (`id`, `kode_matakuliah`, `nama_matakuliah`, `sifat_perkuliahan`, `tahun_ajaran`, `semester`, `jenis_matakuliah`, `bobot_sks`) VALUES
+(46, 'DT001', 'Pancasila', 'Wajib', '2019/2020', 1, 'Praktek', 2),
+(47, 'DT002', 'Web 2', 'Pilihan', '2020/2021', 3, 'Praktek', 4),
+(48, 'DT003', 'Delectus nisi dolor', 'Wajib', '2020/2021', 3, 'Teori', 2),
+(49, 'DT004', 'A odit beatae non qu', 'Pilihan', '2020/2021', 2, 'Teori', 2),
+(50, 'DT005', 'Lorem maiores qui qu', 'Wajib', '2020/2021', 5, 'Teori', 2),
+(51, 'DT010', 'Asperiores dolore no', 'Pilihan', '2019/2020', 6, 'Praktek', 4),
+(53, 'DT012', 'Pengolahan Basis Data', 'Konsentrasi', '2021/2022', 3, 'Praktek', 4);
 
 --
 -- Indexes for dumped tables
@@ -62,7 +69,7 @@ ALTER TABLE `tbl_kurikulum`
 -- AUTO_INCREMENT for table `tbl_kurikulum`
 --
 ALTER TABLE `tbl_kurikulum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
