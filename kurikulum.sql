@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2022 at 04:23 PM
+-- Generation Time: Jan 20, 2022 at 04:18 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -47,9 +47,9 @@ INSERT INTO `tbl_kurikulum` (`id`, `kode_matakuliah`, `nama_matakuliah`, `sifat_
 (47, 'DT002', 'Web 2', 'Pilihan', '2020/2021', 3, 'Praktek', 4),
 (48, 'DT003', 'Delectus nisi dolor', 'Wajib', '2020/2021', 3, 'Teori', 2),
 (49, 'DT004', 'A odit beatae non qu', 'Pilihan', '2020/2021', 2, 'Teori', 2),
-(50, 'DT005', 'Lorem maiores qui qu', 'Wajib', '2020/2021', 5, 'Teori', 2),
 (51, 'DT010', 'Asperiores dolore no', 'Pilihan', '2019/2020', 6, 'Praktek', 4),
-(53, 'DT012', 'Pengolahan Basis Data', 'Konsentrasi', '2021/2022', 3, 'Praktek', 4);
+(53, 'DT012', 'Pengolahan Basis Data', 'Konsentrasi', '2021/2022', 3, 'Praktek', 4),
+(54, 'DT100', 'UI/UX Design 2', 'Konsentrasi', '2021/2022', 5, 'Praktek', 2);
 
 --
 -- Indexes for dumped tables
@@ -69,7 +69,7 @@ ALTER TABLE `tbl_kurikulum`
 -- AUTO_INCREMENT for table `tbl_kurikulum`
 --
 ALTER TABLE `tbl_kurikulum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
