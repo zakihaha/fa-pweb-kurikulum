@@ -16,6 +16,8 @@ class M_kurikulum extends CI_Model {
             $this->db->where('tahun_ajaran', $tahun_ajaran);
         }
         
+        $this->db->order_by('tahun_ajaran', 'asc');
+        $this->db->order_by('semester', 'asc');
         return $this->db->get('tbl_kurikulum', $limit, $start)->result_array();
     }
 

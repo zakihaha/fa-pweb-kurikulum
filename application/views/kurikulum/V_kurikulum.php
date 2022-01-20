@@ -71,7 +71,7 @@
                     <tbody>
                         <?php if (empty($kurikulum)) : ?>
                             <tr>
-                                <td>
+                                <td colspan="9">
                                     Data tidak ditemukan
                                 </td>
                             </tr>

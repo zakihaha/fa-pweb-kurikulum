@@ -1,6 +1,6 @@
 <?php 
 // config
-$config['base_url'] = 'http://localhost/web-2/praktek/fa-pweb-kurikulum/c_kurikulum/index';
+$config['base_url'] = base_url().'/c_kurikulum/index';
 
 // styling
 $config['full_tag_open'] = '<ul class="pagination">';

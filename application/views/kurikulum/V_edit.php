@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label for="sifat_perkuliahan">Sifat Perkuliahan</label>
                         <select id="sifat_perkuliahan" name="sifat_perkuliahan" class="form-control">
-                            <?php foreach($sifat_perkuliahan as $data) : ?>
+                            <?php foreach ($sifat_perkuliahan as $data) : ?>
                                 <?php if ($data == $kurikulum['sifat_perkuliahan']) : ?>
                                     <option value="<?php echo $data ?>" selected><?php echo $data ?></option>
                                 <?php else : ?>
@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="tahun_ajaran">Tahun Ajaran</label>
                         <select id="tahun_ajaran" name="tahun_ajaran" class="form-control">
-                            <?php foreach($tahun_ajaran as $data) : ?>
+                            <?php foreach ($tahun_ajaran as $data) : ?>
                                 <?php if ($data == $kurikulum['tahun_ajaran']) : ?>
                                     <option value="<?php echo $data ?>" selected><?php echo $data ?></option>
                                 <?php else : ?>
@@ -53,7 +53,7 @@
                     <div class="form-group">
                         <label for="semester">Semester</label>
                         <div class="d-flex">
-                            <?php foreach($semester as $data) : ?>
+                            <?php foreach ($semester as $data) : ?>
                                 <?php if ($data == $kurikulum['semester']) : ?>
                                     <div class="d-flex me-20px">
                                         <input type="radio" checked name="semester" class="me-5px" id="<?php echo $data ?>" value="<?php echo $data ?>">
@@ -71,13 +71,13 @@
                         <div class="form-group">
                             <label for="jenis_matakuliah">Jenis Matakuliah</label>
                             <select id="jenis_matakuliah" name="jenis_matakuliah" class="form-control">
-                            <?php foreach($jenis_matakuliah as $data) : ?>
-                                <?php if ($data == $kurikulum['jenis_matakuliah']) : ?>
-                                    <option value="<?php echo $data ?>" selected><?php echo $data ?></option>
-                                <?php else : ?>
-                                    <option value="<?php echo $data ?>"><?php echo $data ?></option>
-                                <?php endif ?>
-                            <?php endforeach ?>
+                                <?php foreach ($jenis_matakuliah as $data) : ?>
+                                    <?php if ($data == $kurikulum['jenis_matakuliah']) : ?>
+                                        <option value="<?php echo $data ?>" selected><?php echo $data ?></option>
+                                    <?php else : ?>
+                                        <option value="<?php echo $data ?>"><?php echo $data ?></option>
+                                    <?php endif ?>
+                                <?php endforeach ?>
                             </select>
                             <div class="small text-danger mt-5px"><?php echo form_error('jenis_matakuliah') ?></div>
                         </div>
@@ -88,6 +88,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-success">Update</button>
+                    </div>
                 </form>
             </div>
         </div>
